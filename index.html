@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="FITNERD - Invite-only AI fitness trainer for introverts. No crowded gyms, just personalized workouts powered by AI."
+    />
+    <title>FITNERD - Invite-Only AI Fitness Trainer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="uk">UK</button>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <div class="badge">
+          <span class="lock-icon">🔒</span>
+          <span data-i18n="badge">Invite-Only • Beta Access</span>
+        </div>
+
+        <h1 class="hero-title">FITNERD<span class="accent">.</span></h1>
+
+        <p class="hero-subtitle" data-i18n="subtitle">
+          AI trainer for introverts who love solo workouts
+        </p>
+
+        <p class="hero-description" data-i18n="description">
+          No crowded gyms. No judging eyes. Just you, your biometric data, and
+          AI that knows when to push and when to ease up.
+        </p>
+
+        <!-- Video Button -->
+        <button class="video-btn" id="videoBtn">
+          <div class="play-icon">▶</div>
+          <span data-i18n="watchVideo">Watch 30-sec promo</span>
+        </button>
+
+        <!-- Script Expandable (UKR only) -->
+        <div
+          class="script-expandable"
+          id="scriptExpandable"
+          style="display: none"
+        >
+          <button class="expand-btn" id="expandBtn">
+            <span data-i18n="videoScript">Відео сценарій</span>
+            <span class="chevron">▼</span>
+          </button>
+          <div class="script-content" id="scriptContent">
+            <p>
+              Yo! П'ятнадцять років тому я б обожнював щось подібне. AI-тренер,
+              який справді РОЗУМІЄ тебе - твою енергію, настрій, сигнали твого
+              тіла.
+            </p>
+            <p>
+              Ніяких переповнених залів, ніякого судження, тільки науково
+              обґрунтовані тренування, що адаптуються у реальному часі.
+            </p>
+            <p>
+              Це називається FITNERD, і, чесно кажучи? Це як мати персонального
+              тренера, який також читає думки.
+            </p>
+            <p>
+              Але ось у чому справа - це invite-only. Якщо ти серйозно
+              налаштований на фітнес НА СВОЇХ УМОВАХ, приєднуйся до вейт-листа!
+            </p>
+          </div>
+        </div>
+
+        <!-- Waitlist Form -->
+        <div class="waitlist-form" id="waitlistForm">
+          <input
+            type="email"
+            id="emailInput"
+            placeholder="your email"
+            data-i18n-placeholder="emailPlaceholder"
+            required
+          />
+          <button id="submitBtn" data-i18n="joinWaitlist">
+            Join Waitlist →
+          </button>
+        </div>
+
+        <!-- Success State -->
+        <div class="success-state" id="successState" style="display: none">
+          <div class="success-icon">✓</div>
+          <h3 data-i18n="successTitle">You're on the list! 🎉</h3>
+          <p>
+            <span data-i18n="yourPosition">Your position:</span>
+            <span class="position-number"
+              >#<span id="positionNumber">247</span></span
+            >
+          </p>
+          <div class="referral-box">
+            <h4>
+              <span class="sparkle">✨</span>
+              <span data-i18n="speedUp">Speed up your access</span>
+            </h4>
+            <p class="referral-text" data-i18n="referralText">
+              For each friend who joins via your link, you move up 5 positions +
+              get an extra month of premium after launch.
+            </p>
+            <div class="referral-input-group">
+              <input
+                type="text"
+                id="referralLink"
+                readonly
+                value="fitnerd.ai/ref/user123"
+              />
+              <button id="copyBtn" data-i18n="copy">Copy</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="scroll-indicator">
+          <div class="chevron-down">▼</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+      <div class="modal-content">
+        <div class="video-container">
+          <!-- Video will be loaded here -->
+          <video id="promoVideo" controls>
+            <source src="assets/videos/fitnerd-promo.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <button class="close-modal" id="closeModal" data-i18n="close">
+          Close
+        </button>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <section class="features">
+      <h2 data-i18n="howItWorks">How does it work?</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🧠</div>
+          <h3 data-i18n="feature1Title">AI that reads you</h3>
+          <p data-i18n="feature1Desc">
+            Real-time analysis of mood, energy, and biometric data
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3 data-i18n="feature2Title">Adaptive plan</h3>
+          <p data-i18n="feature2Desc">
+            Every workout adjusts to your state here and now
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">❤️</div>
+          <h3 data-i18n="feature3Title">No judgment</h3>
+          <p data-i18n="feature3Desc">
+            Just you, your AI trainer, and science. No crowded gyms
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📈</div>
+          <h3 data-i18n="feature4Title">Progress without BS</h3>
+          <p data-i18n="feature4Desc">
+            Metrics that matter. No toxic comparisons
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+      <div class="stats-badge">
+        <span>🛡️</span>
+        <span data-i18n="betaResults">Beta Results</span>
+      </div>
+      <h2 data-i18n="statsTitle">Early results are impressive.</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">127</div>
+          <div class="stat-label" data-i18n="stat1Label">
+            active beta testers
+          </div>
+          <div class="stat-subtext" data-i18n="stat1Sub">
+            selected from 2000+ applications
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">94%</div>
+          <div class="stat-label" data-i18n="stat2Label">
+            stick to their plan
+          </div>
+          <div class="stat-subtext" data-i18n="stat2Sub">
+            vs. 12% in regular gyms
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">23 min</div>
+          <div class="stat-label" data-i18n="stat3Label">average duration</div>
+          <div class="stat-subtext" data-i18n="stat3Sub">
+            efficiency > duration
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <h2 data-i18n="testimonialsTitle">What beta testers say?</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="rating">★★★★★</div>
+          <p class="testimonial-text" data-i18n="testimonial1">
+            "Finally fitness without social anxiety. AI knows me better than any
+            trainer."
+          </p>
+          <div class="testimonial-author">
+            <div class="avatar">A</div>
+            <div>
+              <div class="author-name">Alex K.</div>
+              <div class="author-role">Software Engineer</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="rating">★★★★★</div>
+          <p class="testimonial-text" data-i18n="testimonial2">
+            "Love how workouts adapt to my PMS, stress levels, and sleep. It's
+            magic."
+          </p>
+          <div class="testimonial-author">
+            <div class="avatar">M</div>
+            <div>
+              <div class="author-name">Maria L.</div>
+              <div class="author-role">Product Designer</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="rating">★★★★★</div>
+          <p class="testimonial-text" data-i18n="testimonial3">
+            "As a control freak with my own spreadsheets, I'm thrilled with the
+            level of metrics detail. 10/10"
+          </p>
+          <div class="testimonial-author">
+            <div class="avatar">D</div>
+            <div>
+              <div class="author-name">Dmitry B.</div>
+              <div class="author-role">Data Analyst</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+      <h2 data-i18n="faqTitle">Questions?</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary data-i18n="faq1Q">Why invite-only?</summary>
+          <p data-i18n="faq1A">
+            We want to give each user maximum attention. AI needs time to learn
+            your unique data. Gradual onboarding = better quality.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq2Q">What data does AI analyze?</summary>
+          <p data-i18n="faq2A">
+            Heart rate variability, sleep quality, stress levels from your
+            wearable (Apple Watch, Garmin, Whoop, Oura). Plus your mood check-in
+            before each workout.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq3Q">Need a gym or equipment?</summary>
+          <p data-i18n="faq3A">
+            No. Most workouts are bodyweight or minimal equipment
+            (dumbbells/bands). Train at home, park, hotel - anywhere.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq4Q">How much does it cost?</summary>
+          <p data-i18n="faq4A">
+            Beta is free for the first 500 users. After launch - from €12/mo.
+            Lifetime discount for beta-testers.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+      <h2 data-i18n="ctaTitle">Ready to start?</h2>
+      <p class="cta-description" data-i18n="ctaDescription">
+        Limited spots. Average wait time - 2-3 weeks.
+      </p>
+      <button class="cta-button" id="ctaBtn" data-i18n="ctaButton">
+        Reserve Your Spot →
+      </button>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-left">
+          <p data-i18n="footerCopyright">
+            © 2024 FITNERD. Made with AI ❤️ for introverts.
+          </p>
+        </div>
+        <div class="footer-links">
+          <a href="#" data-i18n="privacy">Privacy</a>
+          <a href="#" data-i18n="terms">Terms</a>
+          <a href="#" data-i18n="contact">Contact</a>
+        </div>
+      </div>
+      <div class="disclaimer">
+        <p data-i18n="disclaimer">
+          DISCLAIMER: This is a demonstration project for educational purposes
+          only. All data presented is fictional and for illustrative purposes.
+          The character in the video is AI-generated and any resemblance to
+          public figures is coincidental. The voice is synthetically generated.
+          This content should not be used for commercial purposes without proper
+          authorization and consent from relevant parties. FITNERD is a
+          conceptual product created to showcase marketing capabilities and AI
+          workflow.
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
