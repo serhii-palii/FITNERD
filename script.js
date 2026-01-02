@@ -1,6 +1,6 @@
 // Google Sheets Integration
-// REPLACE THIS URL WITH YOUR GOOGLE APPS SCRIPT WEB APP URL
-const GOOGLE_SCRIPT_URL = "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
+const GOOGLE_SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbwrd7LpzjYkIIolVp7tIIt8CMrMkX8wuoRxAab3xlWneyQHMNFVgbE_5hF07iwyENYWSA/exec";
 
 // Translations
 const translations = {
@@ -253,7 +253,10 @@ if (submitBtn && emailInput && successState && waitlistForm) {
 
     try {
       // Send to Google Sheets (if URL is configured)
-      if (GOOGLE_SCRIPT_URL !== "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE") {
+      if (
+        GOOGLE_SCRIPT_URL !==
+        "https://script.googlhttps://script.google.com/macros/s/AKfycbwrd7LpzjYkIIolVp7tIIt8CMrMkX8wuoRxAab3xlWneyQHMNFVgbE_5hF07iwyENYWSA/exece.com/macros/s/AKfycbwlvT7e-20sO0byS5Alvr98ovJB82OVAF-CdwjQ40On6sZFsnuRnT9V6sv7i7zAdWYX2w/exec"
+      ) {
         await fetch(GOOGLE_SCRIPT_URL, {
           method: "POST",
           mode: "no-cors",
