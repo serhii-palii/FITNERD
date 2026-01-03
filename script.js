@@ -1,7 +1,6 @@
 // Google Sheets Integration
 const GOOGLE_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbwrd7LpzjYkIIolVp7tIIt8CMrMkX8wuoRxAab3xlWneyQHMNFVgbE_5hF07iwyENYWSA/exec";
-
+  "https://script.google.com/macros/s/AKfycbymuKCO1YfvliBI42OoZ35gFXy1j0_OB8SKyaW76m7z-Rol5HcsDIOz-sHCsrP-5k3-hg/exec";
 // Translations
 const translations = {
   en: {
