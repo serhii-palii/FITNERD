@@ -226,13 +226,6 @@ if (videoBtn && videoModal && closeModal) {
   });
 }
 
-<<<<<<< HEAD
-// Google Sheets Integration
-const GOOGLE_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbwrd7LpzjYkIIolVp7tIIt8CMrMkX8wuoRxAab3xlWneyQHMNFVgbE_5hF07iwyENYWSA/exec";
-
-=======
->>>>>>> 9d0d76d0341b4c096e7474fd46d3d910852e51f0
 // Waitlist form
 const waitlistForm = document.getElementById("waitlistForm");
 const emailInput = document.getElementById("emailInput");
@@ -260,14 +253,7 @@ if (submitBtn && emailInput && successState && waitlistForm) {
 
     try {
       // Send to Google Sheets (if URL is configured)
-      if (
-        GOOGLE_SCRIPT_URL !==
-<<<<<<< HEAD
-        "https://script.google.com/macros/s/AKfycbwrd7LpzjYkIIolVp7tIIt8CMrMkX8wuoRxAab3xlWneyQHMNFVgbE_5hF07iwyENYWSA/exec"
-=======
-        "https://script.googlhttps://script.google.com/macros/s/AKfycbwrd7LpzjYkIIolVp7tIIt8CMrMkX8wuoRxAab3xlWneyQHMNFVgbE_5hF07iwyENYWSA/exece.com/macros/s/AKfycbwlvT7e-20sO0byS5Alvr98ovJB82OVAF-CdwjQ40On6sZFsnuRnT9V6sv7i7zAdWYX2w/exec"
->>>>>>> 9d0d76d0341b4c096e7474fd46d3d910852e51f0
-      ) {
+      if (GOOGLE_SCRIPT_URL !== "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE") {
         await fetch(GOOGLE_SCRIPT_URL, {
           method: "POST",
           mode: "no-cors",
