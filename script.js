@@ -1,134 +1,145 @@
+// Google Sheets Integration
+const GOOGLE_SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbwrd7LpzjYkIIolVp7tIIt8CMrMkX8wuoRxAab3xlWneyQHMNFVgbE_5hF07iwyENYWSA/exec";
+
 // Translations
 const translations = {
   en: {
     badge: "Invite-Only • Beta Access",
-    subtitle: "AI trainer for introverts who love solo workouts",
+    subtitle:
+      "AI trainer for people who'd rather die than work out in front of strangers",
     description:
-      "No crowded gyms. No judging eyes. Just you, your biometric data, and AI that knows when to push and when to ease up.",
+      "Zero awkward gym small talk. Zero judgment. Just you, your biometric data, and AI that actually knows when you're tired (not just lazy 😏).",
     watchVideo: "Watch 30-sec promo",
     videoScript: "Video Script",
     emailPlaceholder: "your email",
     joinWaitlist: "Join Waitlist →",
     successTitle: "You're on the list! 🎉",
     yourPosition: "Your position:",
-    speedUp: "Speed up your access",
+    speedUp: "Skip the line (legally)",
     referralText:
-      "For each friend who joins via your link, you move up 5 positions + get an extra month of premium after launch.",
+      "Each friend who joins through your link = you jump 5 spots + free month of premium. We're bribing you with good stuff, basically.",
     copy: "Copy",
-    videoPlaceholder: "Video will play here",
     close: "Close",
-    howItWorks: "How does it work?",
-    feature1Title: "AI that reads you",
-    feature1Desc: "Real-time analysis of mood, energy, and biometric data",
-    feature2Title: "Adaptive plan",
-    feature2Desc: "Every workout adjusts to your state here and now",
-    feature3Title: "No judgment",
-    feature3Desc: "Just you, your AI trainer, and science. No crowded gyms",
-    feature4Title: "Progress without BS",
-    feature4Desc: "Metrics that matter. No toxic comparisons",
-    betaResults: "Beta Results",
-    statsTitle: "Early results are impressive.",
-    stat1Label: "active beta testers",
-    stat1Sub: "selected from 2000+ applications",
-    stat2Label: "stick to their plan",
-    stat2Sub: "vs. 12% in regular gyms",
-    stat3Label: "average duration",
-    stat3Sub: "efficiency > duration",
-    testimonialsTitle: "What beta testers say?",
+    howItWorks: "How does this magic work?",
+    feature1Title: "AI that actually gets you",
+    feature1Desc:
+      "Reads your heart rate, sleep, stress. Knows when you're tired vs when you're just being lazy",
+    feature2Title: "Adapts in real-time",
+    feature2Desc:
+      "Bad night? Hangover? Stressed? Your workout adjusts automatically. No explanations needed",
+    feature3Title: "Zero social anxiety",
+    feature3Desc:
+      "No leaderboards. No comparing yourself to that person who runs marathons for fun. Just you and science",
+    feature4Title: "Metrics that matter",
+    feature4Desc:
+      "For data nerds who track everything. We get you. Your spreadsheet obsession is safe here",
+    betaResults: "Beta Results (Real Data)",
+    statsTitle: "Turns out, people like this. A lot.",
+    stat1Label: "beta testers training",
+    stat1Sub: "out of 2000+ who applied (we're picky af)",
+    stat2Label: "actually stick to it",
+    stat2Sub: "vs 12% in regular gyms (yeah, really)",
+    stat3Label: "average workout",
+    stat3Sub: "efficient > performative",
+    testimonialsTitle: "What people who are like you are saying",
     testimonial1:
-      "Finally fitness without social anxiety. AI knows me better than any trainer.",
+      "Finally fitness without the social anxiety. This AI knows me better than my therapist tbh.",
     testimonial2:
-      "Love how workouts adapt to my PMS, stress levels, and sleep. It's magic.",
+      "It adapts to my PMS, stress, sleep... Everything. I'm convinced it's witchcraft but I'm not complaining.",
     testimonial3:
-      "As a control freak with my own spreadsheets, I'm thrilled with the level of metrics detail. 10/10",
-    faqTitle: "Questions?",
-    faq1Q: "Why invite-only?",
+      "As someone with 47 spreadsheets tracking everything, this is my dream app. The metrics detail is *chef's kiss*",
+    faqTitle: "Questions you probably have",
+    faq1Q: "Why invite-only? Trying to be cool?",
     faq1A:
-      "We want to give each user maximum attention. AI needs time to learn your unique data. Gradual onboarding = better quality.",
-    faq2Q: "What data does AI analyze?",
+      "Nah, we just want to give everyone proper attention. AI needs time to learn your patterns. Slow rollout = better experience. We're not Fyre Festival, promise.",
+    faq2Q: "What data does the AI actually use?",
     faq2A:
-      "Heart rate variability, sleep quality, stress levels from your wearable (Apple Watch, Garmin, Whoop, Oura). Plus your mood check-in before each workout.",
-    faq3Q: "Need a gym or equipment?",
+      "Heart rate variability, sleep quality, stress from your wearable (Apple Watch, Garmin, Whoop, Oura). Plus a quick mood check before workouts. That's it. We're not reading your texts.",
+    faq3Q: "Do I need gym equipment?",
     faq3A:
-      "No. Most workouts are bodyweight or minimal equipment (dumbbells/bands). Train at home, park, hotel - anywhere.",
-    faq4Q: "How much does it cost?",
+      "Nope. Most workouts = bodyweight or basic stuff (dumbbells/bands). Train at home, hotel room, park, wherever. That's the whole point.",
+    faq4Q: "How much does this cost?",
     faq4A:
-      "Beta is free for the first 500 users. After launch - from €12/mo. Lifetime discount for beta-testers.",
-    ctaTitle: "Ready to start?",
-    ctaDescription: "Limited spots. Average wait time - 2-3 weeks.",
-    ctaButton: "Reserve Your Spot →",
+      "Beta = free for first 500 people. After launch = €12/month. Early adopters get lifetime 40% discount (€7/month forever). Worth it imo.",
+    ctaTitle: "Ready to stop hating exercise?",
+    ctaDescription: "Limited spots. Average wait: 2-3 weeks. Worth it though.",
+    ctaButton: "Get on the Waitlist →",
     footerCopyright: "© 2024 FITNERD. Made with AI ❤️ for introverts.",
     privacy: "Privacy",
     terms: "Terms",
     contact: "Contact",
     disclaimer:
-      "DISCLAIMER: This is a demonstration project for educational purposes only. All data presented is fictional and for illustrative purposes. The character in the video is AI-generated and any resemblance to public figures is coincidental. The voice is synthetically generated. This content should not be used for commercial purposes without proper authorization and consent from relevant parties. FITNERD is a conceptual product created to showcase marketing capabilities and AI workflow.",
+      "DISCLAIMER: This is a demo project for educational purposes. All data is fictional. The video character is AI-generated (any resemblance to public figures is coincidental). Voice is synthetic. Not for commercial use without proper authorization. FITNERD is a concept showcasing marketing + AI workflow capabilities.",
   },
   uk: {
     badge: "Тільки за запрошенням • Beta доступ",
-    subtitle: "AI-тренер для інтровертів, які кайфують від тренувань наодинці",
+    subtitle:
+      "AI-тренер для людей, які краще помруть, ніж будуть тренуватись перед чужими",
     description:
-      "Ніяких переповнених залів. Ніяких чужих поглядів. Тільки ти, твої біометричні дані і AI, який знає, коли тобі треба піддати газу, а коли – злегка відпустити.",
+      "Ніяких awkward розмов у залі. Ніякого судження. Тільки ти, твої біометричні дані, і AI що справді знає, коли ти втомився (а не просто лінуєшся 😏).",
     watchVideo: "Подивитись 30-sec промо",
-    videoScript: "Відео сценарій",
+    videoScript: "Читати",
     emailPlaceholder: "твій email",
     joinWaitlist: "Приєднатись до вейт-листа →",
     successTitle: "Ти в списку! 🎉",
     yourPosition: "Твоя позиція:",
-    speedUp: "Пришвидш свій доступ",
+    speedUp: "Проскочи чергу (легально)",
     referralText:
-      "За кожного друга, який приєднається через твоє посилання, ти просуваєшся на 5 позицій вгору + отримуєш додатковий місяць premium після запуску.",
+      "Кожен друг через твоє посилання = ти стрибаєш на 5 позицій вгору + безкоштовний місяць premium. По суті, ми тебе підкуповуємо, але це ок.",
     copy: "Копіювати",
-    videoPlaceholder: "Тут буде відео",
     close: "Закрити",
-    howItWorks: "Як це працює?",
-    feature1Title: "AI, який тебе читає",
+    howItWorks: "Як працює ця магія?",
+    feature1Title: "AI, який тебе справді розуміє",
     feature1Desc:
-      "Аналіз настрою, енергії та біометричних даних у реальному часі",
-    feature2Title: "План, що адаптується",
-    feature2Desc: "Кожне тренування підлаштовується під твій стан тут і зараз",
-    feature3Title: "Без судження",
+      "Читає твій пульс, сон, стрес. Знає, коли ти втомився, а коли просто лінуєшся",
+    feature2Title: "Адаптується у реальному часі",
+    feature2Desc:
+      "Погано спав? Похмілля? Стрес? Тренування підстроюється автоматично. Без пояснень",
+    feature3Title: "Нуль соціальної тривоги",
     feature3Desc:
-      "Тільки ти, твій AI-тренер і наука. Ніяких переповнених залів",
-    feature4Title: "Прогрес без BS",
-    feature4Desc: "Metrics, що мають значення. Без токсичних порівнянь",
+      "Ніяких leaderboards. Ніяких порівнянь із тим чуваком, що бігає марафони для кайфу. Тільки ти і наука",
+    feature4Title: "Метрики, що мають сенс",
+    feature4Desc:
+      "Для data nerds які все трекають. Ми тебе розуміємо. Твоя одержимість табличками тут у безпеці",
     betaResults: "Результати Beta",
-    statsTitle: "Перші результати вражають.",
-    stat1Label: "активних бета-тестерів",
-    stat1Sub: "обрані з 2000+ заявок",
-    stat2Label: "дотримуються плану",
-    stat2Sub: "проти 12% у звичайних залах",
-    stat3Label: "середня тривалість",
-    stat3Sub: "ефективність > тривалість",
-    testimonialsTitle: "Що кажуть бета-тестери?",
+    statsTitle: "Виявляється, людям це подобається. Сильно.",
+    stat1Label: "бета-тестерів тренуються",
+    stat1Sub: "з 2000+ хто подався (ми прискіпливі)",
+    stat2Label: "справді дотримуються",
+    stat2Sub: "проти 12% у звичайних залах (так, реально)",
+    stat3Label: "середнє тренування",
+    stat3Sub: "ефективність > понти",
+    testimonialsTitle: "Що кажуть люди, схожі на тебе",
     testimonial1:
-      "Нарешті фітнес без соціальної тривоги. AI знає мене краще, ніж будь-який тренер.",
+      "Нарешті фітнес без соціальної тривоги. Цей AI знає мене краще за мого терапевта, чесно.",
     testimonial2:
-      "Кайфую від того, що тренування адаптується під мій ПМС, рівень стресу та сон. Це магія.",
+      "Адаптується під мій ПМС, стрес, сон... Все. Я впевнена, що це чаклунство, але я не скаржусь.",
     testimonial3:
-      "Як control freak із власними табличками, я в захваті від рівня деталізації метрик. 10/10",
-    faqTitle: "Питання?",
-    faq1Q: "Чому invite-only?",
+      "Як хтось з 47 табличками що трекає все, це app моєї мрії. Деталі метрик - що лікарка прописала",
+    faqTitle: "Питання, які ти напевно маєш",
+    faq1Q: "Чому invite-only? Намагаєтесь виглядати круто?",
     faq1A:
-      "Ми хочемо давати кожному користувачу максимум уваги. AI потребує часу, щоб навчитися під твої унікальні дані. Поступовий onboarding = краща якість.",
-    faq2Q: "Які дані аналізує AI?",
+      "Неа, просто хочемо дати кожному нормальну увагу. AI потребує часу, щоб вивчити твої паттерни. Повільний rollout = кращий досвід. Ми не Fyre Festival, обіцяємо.",
+    faq2Q: "Які дані AI справді використовує?",
     faq2A:
-      "Heart rate variability, sleep quality, stress levels з твого wearable (Apple Watch, Garmin, Whoop, Oura). Плюс твій mood check-in перед кожним тренуванням.",
-    faq3Q: "Потрібен зал чи обладнання?",
+      "Heart rate variability, якість сну, стрес з твого wearable (Apple Watch, Garmin, Whoop, Oura). Плюс швидкий mood check перед тренуваннями. Все. Ми не читаємо твої месседжі.",
+    faq3Q: "Потрібне обладнання для залу?",
     faq3A:
-      "Ні. Більшість тренувань – bodyweight або з мінімальним обладнанням (гантелі/резинки). Можна тренуватись вдома, в парку, готелі – де завгодно.",
-    faq4Q: "Скільки коштує?",
+      "Неа. Більшість тренувань = власна вага або базова фігня (гантелі/резинки). Тренуйся вдома, в готелі, парку, де завгодно. В цьому вся суть.",
+    faq4Q: "Скільки це коштує?",
     faq4A:
-      "Бета – безкоштовно для перших 500 користувачів. Після запуску – від €12/міс. Lifetime discount для beta-testers.",
-    ctaTitle: "Готовий почати?",
-    ctaDescription: "Місця обмежено. Середній час очікування – 2-3 тижні.",
-    ctaButton: "Забронювати місце →",
+      "Beta = безкоштовно для перших 500 людей. Після запуску = €12/міс. Early adopters отримують lifetime 40% знижку (€7/міс назавжди). Воно того варте імхо.",
+    ctaTitle: "Готовий перестати ненавидіти тренування?",
+    ctaDescription:
+      "Обмежені місця. Середнє очікування: 2-3 тижні. Але воно того варте.",
+    ctaButton: "Потрапити у вейт-лист →",
     footerCopyright: "© 2024 FITNERD. Зроблено з AI ❤️ для інтровертів.",
     privacy: "Конфіденційність",
     terms: "Умови",
     contact: "Контакти",
     disclaimer:
-      "ВІДМОВА ВІД ВІДПОВІДАЛЬНОСТІ: Це демонстраційний проєкт виключно для освітніх цілей. Всі представлені дані є вигаданими та для ілюстративних цілей. Персонаж у відео згенерований AI, і будь-яка схожість з публічними особами є випадковою. Голос синтезовано штучно. Цей контент не повинен використовуватися в комерційних цілях без належної авторизації та згоди відповідних сторін. FITNERD - це концептуальний продукт, створений для демонстрації маркетингових можливостей та AI workflow.",
+      "ВІДМОВА ВІД ВІДПОВІДАЛЬНОСТІ: Це демо-проєкт для освітніх цілей. Всі дані вигадані. Персонаж у відео згенерований AI (будь-яка схожість з публічними особами випадкова). Голос синтетичний. Не для комерційного використання без належної авторизації. FITNERD - це концепт що демонструє маркетинг + AI workflow можливості.",
   },
 };
 
@@ -215,10 +226,13 @@ if (videoBtn && videoModal && closeModal) {
   });
 }
 
+<<<<<<< HEAD
 // Google Sheets Integration
 const GOOGLE_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbwrd7LpzjYkIIolVp7tIIt8CMrMkX8wuoRxAab3xlWneyQHMNFVgbE_5hF07iwyENYWSA/exec";
 
+=======
+>>>>>>> 9d0d76d0341b4c096e7474fd46d3d910852e51f0
 // Waitlist form
 const waitlistForm = document.getElementById("waitlistForm");
 const emailInput = document.getElementById("emailInput");
@@ -248,7 +262,11 @@ if (submitBtn && emailInput && successState && waitlistForm) {
       // Send to Google Sheets (if URL is configured)
       if (
         GOOGLE_SCRIPT_URL !==
+<<<<<<< HEAD
         "https://script.google.com/macros/s/AKfycbwrd7LpzjYkIIolVp7tIIt8CMrMkX8wuoRxAab3xlWneyQHMNFVgbE_5hF07iwyENYWSA/exec"
+=======
+        "https://script.googlhttps://script.google.com/macros/s/AKfycbwrd7LpzjYkIIolVp7tIIt8CMrMkX8wuoRxAab3xlWneyQHMNFVgbE_5hF07iwyENYWSA/exece.com/macros/s/AKfycbwlvT7e-20sO0byS5Alvr98ovJB82OVAF-CdwjQ40On6sZFsnuRnT9V6sv7i7zAdWYX2w/exec"
+>>>>>>> 9d0d76d0341b4c096e7474fd46d3d910852e51f0
       ) {
         await fetch(GOOGLE_SCRIPT_URL, {
           method: "POST",
