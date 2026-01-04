@@ -20,7 +20,7 @@ Complete go-to-market campaign for FITNERD, an invite-only AI fitness trainer ta
 - **Mobile-responsive** design
 - **Retro gaming** aesthetic
 
-### 2. AI Video Production System
+### 2. AI-Generated Video
 
 - **30-second promo** (optimized for conversion)
 - **Complete production** (tested 5+ platforms)
