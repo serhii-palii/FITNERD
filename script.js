@@ -64,7 +64,7 @@ const translations = {
     ctaTitle: "Ready to stop hating exercise?",
     ctaDescription: "Limited spots. Average wait: 2-3 weeks. Worth it though.",
     ctaButton: "Get on the Waitlist →",
-    footerCopyright: "© 2024 FITNERD. Made with AI ❤️ for introverts.",
+    footerCopyright: "© 2026 fitnerd. Made with ❤️ for introverts.",
     privacy: "Privacy",
     terms: "Terms",
     contact: "Contact",
@@ -133,7 +133,7 @@ const translations = {
     ctaDescription:
       "Обмежені місця. Середнє очікування: 2-3 тижні. Але воно того варте.",
     ctaButton: "Потрапити у вейт-лист →",
-    footerCopyright: "© 2024 FITNERD. Зроблено з AI ❤️ для інтровертів.",
+    footerCopyright: "© 2026 fitnerd. Зроблено з ❤️ для інтровертів.",
     privacy: "Конфіденційність",
     terms: "Умови",
     contact: "Контакти",
