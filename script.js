@@ -280,6 +280,7 @@ if (submitBtn && emailInput && successState && waitlistForm) {
       successState.style.display = "block";
     } catch (error) {
       console.error("Error:", error);
+
       // Still show success to user (form submission doesn't require backend for demo)
       const position = Math.floor(Math.random() * 500) + 100;
       positionNumber.textContent = position;
